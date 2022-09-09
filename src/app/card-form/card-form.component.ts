@@ -8,10 +8,15 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class CardFormComponent implements OnInit {
   cardForm = new FormGroup({
-    name: new FormControl('', [Validators.required, Validators.minLength(3)])
+    name: new FormControl('', [
+      Validators.required,
+      Validators.minLength(3)
+    ])
   });
 
-  constructor() { }
+  constructor() {
+    console.log(this.cardForm.get('name'));
+  }
 
   ngOnInit(): void {
   }
